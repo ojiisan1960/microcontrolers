@@ -1,0 +1,20 @@
+' {$STAMP BS2}
+' {$PBASIC 2.5}
+' From Electronics for Dummies
+' Book VII Chapter 2 Project 2-10
+' Cylon Eyes using a FOR Loop
+
+Led VAR Byte
+
+MAIN:
+  FOR Led = 0 TO 8 STEP 2
+    HIGH Led
+    PAUSE 100
+    LOW Led
+    NEXT
+    FOR Led = 10 TO 2 STEP 2
+      HIGH Led
+      PAUSE 100
+      LOW Led
+    NEXT
+    GOTO MAIN

@@ -1,0 +1,22 @@
+' {$STAMP BS2}
+' {$PBASIC 2.5}
+' Electronics for Dummies Book VII
+' Chapter 3 listing 3-5
+' Using a subroutine
+
+Rnd VAR Word
+led1 PIN 0
+
+DO
+  GOSUB GetRandom         'call GetRandom
+  HIGH led1
+  PAUSE Rnd
+  LOW led1
+  PAUSE 100
+LOOP
+
+GetRandom:                'return a number between 1 and 999
+  RANDOM Rnd
+  Rnd = Rnd // 999 + 1
+  RETURN
+

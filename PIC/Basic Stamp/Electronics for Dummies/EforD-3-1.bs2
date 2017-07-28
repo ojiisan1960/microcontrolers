@@ -1,0 +1,26 @@
+' Electronics for Dummies Book VII
+' Chapter 3 listing 3-1
+' Reading a button
+' {$STAMP BS2}
+' {$PBASIC 2.5}
+
+Green PIN 0
+Red PIN 2
+Button1 PIN 14
+
+DO
+  DEBUG ? Button1
+  IF Button1 = 1 THEN
+    LOW Red
+    HIGH Green
+    PAUSE 1000
+    LOW Green
+    PAUSE 1000
+  ELSE
+    LOW Green
+    HIGH Red
+    PAUSE 1000
+    LOW Red
+    PAUSE 1000
+  ENDIF
+LOOP

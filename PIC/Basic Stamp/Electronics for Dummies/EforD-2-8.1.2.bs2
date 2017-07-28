@@ -1,0 +1,18 @@
+              ' {$STAMP BS2}
+' {$PBASIC 2.5}
+' From Electronics for Dummies
+' Book VII Chapter 2 Project 2-8
+' Using a DO loop UNTIL
+
+Speed VAR Byte
+Led VAR Byte
+Speed = 50
+Led = 0
+
+DO WHILE Led < 11
+  HIGH Led
+  PAUSE Speed
+  LOW Led
+  PAUSE Speed
+  Led = Led + 2
+LOOP

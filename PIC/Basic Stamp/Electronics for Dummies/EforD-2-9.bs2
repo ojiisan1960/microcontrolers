@@ -1,0 +1,20 @@
+' {$STAMP BS2}
+' {$PBASIC 2.5}
+' From Electronics for Dummies
+' Book VII Chapter 2 Project 2-9
+' Using a nested DO loops
+
+Speed VAR Byte
+Led VAR Byte
+Speed = 50
+
+DO
+  Led = 0
+  DO
+    HIGH Led
+    PAUSE Speed
+    LOW Led
+    PAUSE Speed
+    Led = Led + 2
+LOOP UNTIL Led > 10
+LOOP

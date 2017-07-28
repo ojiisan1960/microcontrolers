@@ -1,0 +1,35 @@
+                                                       /* Blinker Demo */
+
+// ------- Preamble -------- //
+#include <avr/io.h>                        /* Defines pins, ports, etc */
+#include <util/delay.h>                     /* Functions to waste time */
+
+#define DELAY 500
+#define RED_LED 1
+#define GRN_LED 4
+
+int main(void) {
+
+  // -------- Inits --------- //
+  //DDRB |= 0b0001000;            /* Data Direction Register B:
+  DDRB = (1<<GRN_LED) | (1<<RED_LED);            /* Data Direction Register B:
+                                   //writing a one to the bit
+                                   //enables output. */
+
+  // ------ Event loop ------ //
+  while (1) {
+
+//    PORTB = 0b00000010;          /* Turn on first LED bit/pin in PORTB */
+    PORTB |= (1 << RED_LED);          /* Turn on first LED bit/pin in PORTB */
+    _delay_ms(DELAY);                                           /* wait */
+
+
+    PORTB = 0b00000000;          /* Turn off all B pins, including LED */
+
+    PORTB |= (1 << GRN_LED);          /* Turn on first LED bit/pin in PORTB */
+    _delay_ms(DELAY);                                           /* wait */
+    PORTB = 0b00000000;          /* Turn off all B pins, including LED */
+
+  }                                                  /* End event loop */
+  return (0);                            /* This line is never reached */
+}

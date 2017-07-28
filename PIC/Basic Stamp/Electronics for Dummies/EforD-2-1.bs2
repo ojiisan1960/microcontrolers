@@ -1,0 +1,24 @@
+' {$STAMP BS2}
+' {$PBASIC 2.5}
+' From Electronics for Dummies
+' Book VII Chapter 2 Project 2-1 and 2-2
+Main:
+  HIGH 0
+  HIGH 2
+  HIGH 4
+  HIGH 6
+  HIGH 8
+  HIGH 10
+
+PAUSE 500
+
+  LOW 10
+  LOW 8
+  LOW 6
+  LOW 4
+  LOW 2
+  LOW 0
+
+PAUSE 500
+
+GOTO MAIN

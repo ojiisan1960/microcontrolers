@@ -1,0 +1,23 @@
+' Electronics for Dummies Book VII
+' Chapter 3 listing 3-4
+' Change the led flashing rate with a potentiometer
+' using RCTIME
+' {$STAMP BS2}
+' {$PBASIC 2.5}
+
+Time VAR Word
+led1 PIN 0
+led2 PIN 2
+Pot PIN 13
+DO
+  HIGH Pot                'charge the capacitor
+  PAUSE 1                 'pause 1 ms
+  RCTIME Pot, 1, Time     'measure RC time
+  HIGH led1
+  LOW led2
+  DEBUG ? Time
+  PAUSE Time * 10
+  LOW led1
+  HIGH led2
+  PAUSE Time * 10
+LOOP

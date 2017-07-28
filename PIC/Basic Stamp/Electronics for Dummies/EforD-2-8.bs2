@@ -1,0 +1,23 @@
+' {$STAMP BS2}
+' {$PBASIC 2.5}
+' From Electronics for Dummies
+' Book VII Chapter 2 Project 2-8
+' Using a DO loop and IF statement
+
+Speed VAR Byte
+Led VAR Byte
+Speed = 50
+Led = 0
+
+DO
+  HIGH Led
+  PAUSE Speed
+  LOW Led
+  PAUSE Speed
+  IF Led < 10 THEN
+    Led = Led + 2
+  ELSE
+    Led = 0
+  ENDIF
+LOOP
+

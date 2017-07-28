@@ -1,0 +1,28 @@
+' {$STAMP BS2}
+' {$PBASIC 2.5}
+' From Electronics for Dummies
+' Book VII Chapter 2 Project 2-3
+' Using constants
+
+Delay CON 500      'define a constant named Delay
+
+Main:
+  HIGH 0
+  HIGH 2
+  HIGH 4
+  HIGH 6
+  HIGH 8
+  HIGH 10
+
+PAUSE Delay        'Use the delay constant
+
+  LOW 10
+  LOW 8
+  LOW 6
+  LOW 4
+  LOW 2
+  LOW 0
+
+PAUSE Delay
+
+GOTO MAIN

@@ -1,0 +1,8 @@
+' {$STAMP BS2}
+' {$PBASIC 2.5}
+Main:
+  HIGH 0      'Led on
+  PAUSE 500    '500 ms
+  LOW 0        'Led off
+  PAUSE 500    '500 ms
+  GOTO Main     'Loop

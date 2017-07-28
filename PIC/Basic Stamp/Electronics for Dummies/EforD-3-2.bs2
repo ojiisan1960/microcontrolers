@@ -1,0 +1,31 @@
+       ' Electronics for Dummies Book VII
+' Chapter 3 listing 3-2
+' This program turns on the led at pin2 for a ramdom number of
+' seconds from 1 to 10 when the BUTTON is pressed
+' {$STAMP BS2}
+' {$PBASIC 2.5}
+
+Result VAR Word
+Seconds VAR Byte
+Button1 PIN 14
+Led1 PIN 0
+Led2 PIN 2
+
+
+DO
+  Result = Result + 1           'increment Result for a random seed
+  DEBUG ? Result
+  HIGH Led1                     'turn on the red led
+  IF Button1 = 1 THEN
+    RANDOM Result
+    Seconds = Result // 9 + 1   'a number between 1 and 10
+    DEBUG "Pausing for "
+    DEBUG DEC Seconds
+    DEBUG " seconds...",CR
+    LOW Led1                    'turn off the red light
+    HIGH Led2                   'turn on the green led
+    PAUSE 1000 * Seconds        'pause for n seconds
+    LOW Led2                    'turn off the green led
+    HIGH Led1                   'turn on the red led
+  ENDIF
+LOOP

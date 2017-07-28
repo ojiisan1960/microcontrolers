@@ -1,0 +1,11 @@
+Get info from /dev/ttyAMC0 using screen
+
+Command: m
+Your device MAC address is
+6c:0b:84:5a:d7:b7
+
+Command: i
+Your device id is 3c0030000347343339373536
+
+Command: v
+system firmware version: 0.5.0

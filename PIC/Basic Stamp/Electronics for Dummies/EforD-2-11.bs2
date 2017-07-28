@@ -1,0 +1,23 @@
+' {$STAMP BS2}
+' {$PBASIC 2.5}
+' From Electronics for Dummies
+' Book VII Chapter 2 Project 2-10
+' Cylon Eyes, start fast then slow down using a nested FOR Loop
+
+Led VAR Byte
+Speed VAR Byte
+
+MAIN:
+  FOR Speed = 10 TO 500 STEP 10
+  DEBUG ? Speed
+    FOR Led = 0 TO 8 STEP 2
+    HIGH Led
+    PAUSE Speed
+    LOW Led
+    NEXT
+    FOR Led = 10 TO 2 STEP 2
+      HIGH Led
+      PAUSE Speed
+      LOW Led
+    NEXT
+  NEXT

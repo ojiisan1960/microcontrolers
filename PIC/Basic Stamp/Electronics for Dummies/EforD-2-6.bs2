@@ -1,0 +1,29 @@
+' {$STAMP BS2}
+' {$PBASIC 2.5}
+' From Electronics for Dummies
+' Book VII Chapter 2 Project 2-6 and 2-7
+' IF contitional
+
+Speed VAR Byte
+Led VAR Byte
+Speed = 50
+Led = 0
+Main:
+  HIGH Led
+  PAUSE Speed
+  LOW Led
+  PAUSE Speed
+  'Project 2-7
+  IF Led < 10 THEN
+    Led = Led + 2
+    'DEBUG DEC Led,CR
+  ELSE
+    Led = 0
+  ENDIF
+
+  'Project 2-6
+  'Led = Led + 2              'next Led
+  'IF Led < 11 THEN MAIN      'continue until P10 and start over
+  'Led = 0
+
+GOTO MAIN
