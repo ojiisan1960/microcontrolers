@@ -17,15 +17,38 @@ void setup() {
   int charcode;
   
 // You need to provide the Process Step
+    Serial.print("Data in: ");
+    Serial.println(message);
+
+    while (index < strlen(message))
+    {
+      if (message[index] == ',')
+        {
+        //Serial.println("");
+        holdIndex = index;
+        //Serial.println(holdIndex + 1);
+        break;
+        } 
+//      Serial.print("Index:");
+//      Serial.print(index);
+//      Serial.print(" ");
+    Serial.print(message[index]);
+    index++;
+  
+   
+    }
+
+/* 
   while(index < sizeof(message)) {
     charcode = message[index];
     if ( charcode == 44 ){
-      Serial.print(" ");
+      Serial.println(" ");
+      charcode = ' ';
     }
-    Serial.print(charcode);
+  Serial.print(charcode);
    index++;
   
-}
+} */
   
  
   //Serial.print("The temperature is = ");
