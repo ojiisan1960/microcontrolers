@@ -8,7 +8,7 @@ Dr. Purdum, Nov 12, 2014
 
 #define HEADIOPIN 10  // Which I/O pins are we using?
 #define TAILIOPIN 11
-#define PAUSE 1000      // How long to delay?
+#define PAUSE 500      // How long to delay?
 
 int headsCounter; // Heads/tails counters
 int tailsCounter;
