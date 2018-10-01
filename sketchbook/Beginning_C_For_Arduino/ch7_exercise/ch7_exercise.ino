@@ -14,30 +14,28 @@ void setup() {
   int holdIndex = 0;
   int temperature;
   int humidity;
-  int charcode;
-  
-// You need to provide the Process Step
+ 
+ 
+  // You need to provide the Process Step
     Serial.print("Data in: ");
     Serial.println(message);
-
-    while (index < strlen(message))
+    Serial.print("The string length is:");
+    Serial.println(strlen(message));
+    
+    while (index < strlen(message))  //read the message character array
     {
-      if (message[index] == ',')
+      
+      if ( message[index] != ',')   // if its not a ',' print it
         {
-        //Serial.println("");
-        holdIndex = index;
-        //Serial.println(holdIndex + 1);
-        break;
-        } 
-//      Serial.print("Index:");
-//      Serial.print(index);
-//      Serial.print(" ");
-    Serial.print(message[index]);
+          Serial.print(message[index]);
+          
+        } else
+          Serial.println("");       // else print a newline
     index++;
   
    
     }
-
+ 
 /* 
   while(index < sizeof(message)) {
     charcode = message[index];
